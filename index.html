@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-sm">
                 <div class="card">
-                    <div class="card-header">Module pattern #1</div>
+                    <div class="card-header">Pattern #1 modules</div>
                     <div class="card-body">
                         <h5 class="card-title">Create help links! </h5>
                         <h6 class="card-subtitle mb-2 text-muted">the general idea is to have text and help icons with links.</h6>
@@ -60,7 +60,7 @@
             </div>
             <div class="col-sm">
                 <div class="card text-white bg-info mb-3">
-                  <div class="card-header">Module pattern #1</div>
+                  <div class="card-header">Pattern #1 modules</div>
                   <div class="card-body" id="testsUrl">
                     <h5 class="card-title">Links of tests!</h5>
                     <p class="card-text helplink" data-url="www.w3schools.com/js/" data-title="Learn JS">Learn JS </p>
@@ -74,10 +74,15 @@
 </body>
 
 <script type="text/javascript" src="./modulePattern.js"></script>
+<script type="text/javascript" src="./prototypePattern.js"></script>
 <script type="text/javascript">
     helper.get('.helplink', function(elements){
         helper.create(elements);
     });
+
+    tabs.setTabs([{name:"Teste1", content:"teste1container"}], function(tabs){
+        console.log(tabs);
+    })
 
     (function(window, document) {
         var $query = function(query){
