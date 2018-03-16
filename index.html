@@ -70,19 +70,63 @@
             </div>
         </div>
     </section>
+    <section class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">Pattern #2 Prototype</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Create new Tab!</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">the general idea is to have text and help icons with links.</h6>
+                        <p class="card-text">
+                            <form name="link">
+                                <div class="form-group">
+                                    <label for="tab"> Tab </label>
+                                    <input type="text" class="form-control" name="tab" id="tab" placeholder="tab name" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="contenttitle"> Content title </label>
+                                    <input type="text" class="form-control" name="linkurl" id="contenttitle" placeholder="content title" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="content"> Content </label>
+                                    <textarea class="form-control" name="content" id="content" placeholder="Place the content here!" ></textarea>
+                                </div>                                  
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-primary" id="addTab"> <i class="fas fa-anchor"></i> create </button>
+                                </div>
+                            </form>
+                        </p>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-sm">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                            </li>
+                        </ul>
+                    </div>                   
+                    <div class="card-body">
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                        </div>
+                    </div>
+                </div>                               
+            </div>
+        </div>
+    </section>    
 
 </body>
 
-<script type="text/javascript" src="./modulePattern.js"></script>
-<script type="text/javascript" src="./prototypePattern.js"></script>
+<script type="text/javascript" src="./modulePattern.js?v=1"></script>
+<script type="text/javascript" src="./prototypePattern.js?v=1"></script>
 <script type="text/javascript">
     helper.get('.helplink', function(elements){
         helper.create(elements);
     });
-
-    tabs.setTabs([{name:"Teste1", content:"teste1container"}], function(tabs){
-        console.log(tabs);
-    })
 
     (function(window, document) {
         var $query = function(query){
@@ -110,7 +154,16 @@
 
     })(window, document);
 
+    var tabs = new tabsmodule();
 
+    tabs.mainContainer("tab-content");
+
+    tabs.setTabs([{name:"Teste1", content:"teste1container"}], function(tabs){
+        console.log(tabs);
+    })
+
+
+    console.log(tabs);
 
 </script>
 
