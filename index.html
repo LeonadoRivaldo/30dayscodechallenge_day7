@@ -4,10 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Apply, bind and call </title>
+    <title>Studying design patterns</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="./main.css" /> -->
 
@@ -18,8 +17,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <i class="fab fa-js-square"></i>
-                    Studying design patterns
+                    <i class="fab fa-js-square"></i> Studying design patterns
                 </a>
                 <div class="d-flex justify-content-end">
                     <p style="margin:0px;" id="welcome"></p>
@@ -45,7 +43,7 @@
                                 <div class="form-group">
                                     <label for="url"> Link url </label>
                                     <input type="text" class="form-control" name="linkurl" id="url" placeholder="ur help link url" />
-                                </div>  
+                                </div>
                                 <div class="form-group">
                                     <label for="title" title="if no title label will be the title"> Link title  </label>
                                     <input type="text" class="form-control" name="linktitle" id="title" placeholder="ur help link title" />
@@ -56,17 +54,17 @@
                             </form>
                         </p>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="col-sm">
                 <div class="card text-white bg-info mb-3">
-                  <div class="card-header">Pattern #1 modules</div>
-                  <div class="card-body" id="testsUrl">
-                    <h5 class="card-title">Links of tests!</h5>
-                    <p class="card-text helplink" data-url="www.w3schools.com/js/" data-title="Learn JS">Learn JS </p>
-                    <p class="card-text helplink" data-url="developer.mozilla.org/pt-BR/docs/Web/JavaScript" data-title="Learn JS">MDN JavaScript </p>
-                  </div>
-                </div>                
+                    <div class="card-header">Pattern #1 modules</div>
+                    <div class="card-body" id="testsUrl">
+                        <h5 class="card-title">Links of tests!</h5>
+                        <p class="card-text helplink" data-url="www.w3schools.com/js/" data-title="Learn JS">Learn JS </p>
+                        <p class="card-text helplink" data-url="developer.mozilla.org/pt-BR/docs/Web/JavaScript" data-title="Learn JS">MDN JavaScript </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -90,15 +88,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="content"> Content </label>
-                                    <textarea class="form-control" name="content" id="content" placeholder="Place the content here!" ></textarea>
-                                </div>                                  
+                                    <textarea class="form-control" name="content" id="content" placeholder="Place the content here!"></textarea>
+                                </div>
                                 <div class="d-flex justify-content-end">
                                     <button class="btn btn-primary" id="addTab"> <i class="fas fa-anchor"></i> create </button>
                                 </div>
                             </form>
                         </p>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="col-sm">
                 <div class="card text-center">
@@ -108,44 +106,44 @@
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
                             </li>
                         </ul>
-                    </div>                   
+                    </div>
                     <div class="card-body">
                         <div class="tab-content" id="myTabContent">
-                          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
                         </div>
                     </div>
-                </div>                               
+                </div>
             </div>
         </div>
-    </section>    
+    </section>
 
 </body>
 
 <script type="text/javascript" src="./modulePattern.js?v=1"></script>
 <script type="text/javascript" src="./prototypePattern.js?v=1"></script>
 <script type="text/javascript">
-    helper.get('.helplink', function(elements){
+    helper.get('.helplink', function(elements) {
         helper.create(elements);
     });
 
     (function(window, document) {
-        var $query = function(query){
+        var $query = function(query) {
             return document.querySelector(query);
         }
 
 
-        $query("#creatLink").addEventListener('click', function($event){
+        $query("#creatLink").addEventListener('click', function($event) {
             $event.preventDefault();
             var label = $query("#label").value;
             var url = $query("#url").value;
             var title = $query("#title").value;
-            var newText = '<p class="card-text helplink" data-url="'+url+'" data-title="'+title+'">'+label+' </p>';
+            var newText = '<p class="card-text helplink" data-url="' + url + '" data-title="' + title + '">' + label + ' </p>';
             $query("#testsUrl").innerHTML += newText;
 
             setTimeout(function() {
-                helper.get('.helplink', function(elements){
+                helper.get('.helplink', function(elements) {
                     helper.create(elements);
-                })                
+                })
             }, 200);
 
 
@@ -158,13 +156,15 @@
 
     tabs.mainContainer("tab-content");
 
-    tabs.setTabs([{name:"Teste1", content:"teste1container"}], function(tabs){
+    tabs.setTabs([{
+        name: "Teste1",
+        content: "teste1container"
+    }], function(tabs) {
         console.log(tabs);
     })
 
 
     console.log(tabs);
-
 </script>
 
 
